@@ -7,7 +7,7 @@ export default function LocationsList() {
 
     useEffect(() => {
         axios.get('https://rickandmortyapi.com/api/location/')
-            .then(res => setLocations(res.data))
+            .then(res => setLocations(res.data.results))
             .catch(error => console.error('Server Error', error));
     }, [setLocations]);
 

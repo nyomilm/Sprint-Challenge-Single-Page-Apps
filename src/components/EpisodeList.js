@@ -8,7 +8,7 @@ export default function EpisodeList(props) {
 
     useEffect(() => {
         axios.get('https://rickandmortyapi.com/api/episode/')
-            .then(res => setEpisodes(res.data))
+            .then(res => setEpisodes(res.data.results))
             .catch(error => console.error('Server Error', error));
     }, [setEpisodes]);
 
