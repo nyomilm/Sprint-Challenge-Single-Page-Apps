@@ -1,16 +1,24 @@
 import React from "react";
 
-export default function CharacterCard({ name, status, species, gender, origin, location, image}) {
+export default function CharacterCard({ name, status, species, origin, location, image }) {
   return (
-    <div>
-      <h2>{name}</h2>
-      <img src={image} alt={name} />
-      <p>Location: {location}</p>
-      <p>species: {species}</p>
-      <p>Gender: {gender}</p>
-      <p>Status {status}</p>
-      <p>Origin: {origin}</p>
+    <div className="ui card">
 
+      <div className="image">
+        <img src={image} alt={name} />
+      </div>
+
+      <div className="content">
+        <h2 className="header">{name}</h2>
+        <div className="meta">
+          <span className="date">{species} {status}</span>
+        </div>
+
+        <div className="desription">
+          <p>Location: {location}</p>
+          <p>Origin: {origin}</p>
+        </div>
+      </div>
     </div>
   )
 }

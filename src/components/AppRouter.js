@@ -1,26 +1,20 @@
 import React from "react";
 import {Route} from 'react-router-dom';
+import CharacterList from './CharacterList';
+import LocationList from "./LocationsList";
+import EpisodeList from './EpisodeList';
+import WelcomePage from './WelcomePage';
+
+
 
 const AppRouter = () => {
     return (
       <div>
-        <div className="App">
-          <h1>Rick and Morty Fan Page</h1>
-          <div>
-            <Link to="/">Home Page</Link>
-          </div>
-          <div>
-          <Link to="/characters">Characters</Link>
+        <Route path="/" exact component={WelcomePage} />
+        <Route path="/characters" component={CharacterList} />
+        <Route path="/locations" component={LocationList} />
+        <Route path="/episodes" component={EpisodeList} />
         </div>
-        <div>
-          <Link to="/locations">Locations</Link>
-        </div>
-        <div>
-          <Link to="/episodes">Episodes</Link>
-        </div>
-      </div>
-    </div>
-  );
-};
-
+    )
+}
 export default AppRouter;
